@@ -84,5 +84,5 @@ while True:
             print('Digite uma opção válida...')
 
     except ValueError:
-        print('Digite uma opção entre 0 e 3...')
+        print('Digite uma opção entre 0 e 4...')
 
