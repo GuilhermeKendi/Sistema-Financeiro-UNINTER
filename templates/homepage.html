@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="resume">
+        <div>
+          Receita Mensal:R$=
+          <span class="incomes">{{entrada}}</span>
+        </div>
+        <div>
+          Despesa Mensal:R$=
+          <span class="incomes">{{saida}}</span>
+        </div>
+        <div>
+          Saldo: Total=
+          <span class="incomes">{{saldo}}</span>
+        </div>
+      </div>
+      <form class="newItem" method="post">
+        <div class="Div_desc">
+          <label for="desc">descrição</label>
+          <input name="desc" type="text" id="desc" />
+        </div>
+        <div class="divAmount">
+          <label for="amount">valor</label>
+          <input name="valor" type="text" id="amount" />
+        </div>
+        <div class="divType">
+          <label for="type">Tipo</label>
+          <select id="type" name="Tipo">
+            <option value="Entrada">Entrada</option>
+            <option value="Saida">Saida</option>
+          </select>
+        </div>
+        <button type="submit" id="btnNew">Incluir</button>
+      </div>
+    </main>
+  </body>
+</html>
