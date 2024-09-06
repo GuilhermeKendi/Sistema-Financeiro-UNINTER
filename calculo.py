@@ -22,7 +22,7 @@ def calcular_totais(items): #função pra guardar entradas e saidas e definir o 
   saldo_total = total_entrada - total_saida
 
   return {
-     s "entrada": total_entrada,
+      "entrada": total_entrada,
       "saida": total_saida,
       "saldo": saldo_total
       
