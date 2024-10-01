@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Controle Financeiro</title>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -13,36 +13,53 @@
     <main>
       <div class="resume">
         <div>
-          Receita Mensal:R$=
+          Receita Mensal: R$ 
           <span class="incomes">{{entrada}}</span>
         </div>
         <div>
-          Despesa Mensal:R$=
+          Despesa Mensal: R$ 
           <span class="incomes">{{saida}}</span>
         </div>
         <div>
-          Saldo: Total=
+          Saldo Total: R$ 
           <span class="incomes">{{saldo}}</span>
         </div>
       </div>
       <form class="newItem" method="post">
         <div class="Div_desc">
-          <label for="desc">descrição</label>
-          <input name="desc" type="text" id="desc" />
+          <label for="desc">Descrição:</label>
+          <input name="desc" type="text" id="desc" required />
         </div>
         <div class="divAmount">
-          <label for="amount">valor</label>
-          <input name="valor" type="text" id="amount" />
+          <label for="amount">Valor:</label>
+          <input name="valor" type="number" id="amount" step="0.01" required />
         </div>
         <div class="divType">
-          <label for="type">Tipo</label>
-          <select id="type" name="Tipo">
-            <option value="Entrada">Entrada</option>
-            <option value="Saida">Saida</option>
+          <label for="type">Tipo:</label>
+          <select id="type" name="Tipo" required>
+            <option value="entrada">Entrada</option>
+            <option value="saida">Saída</option>
           </select>
         </div>
         <button type="submit" id="btnNew">Incluir</button>
-      </div>
+      </form>
+      <h2>Transações:</h2>
+      <table>
+        <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Tipo</th>
+        </tr>
+        {% for transacao in transacoes %}
+        <tr>
+            <td>{{ transacao.descricao }}</td>
+            <td>R$ {{ transacao.valor }}</td>
+            <td>{{ transacao.tipo }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Total: R$ {{ total }}</h2>
     </main>
   </body>
 </html>
